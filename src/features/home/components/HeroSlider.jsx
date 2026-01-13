@@ -29,7 +29,7 @@ const slides = [
   {
     id: 'standard-fossil-watches',
     type: 'standard',
-    image: '/assets/images/Slider/Watche.jpg',
+    image: '/assets/images/Slider/watche.jpg',
     bgAlignment: 'object-center',
     brandBadge: 'Fossil',
     title: 'WATCHES',
@@ -39,7 +39,7 @@ const slides = [
   {
     id: 'premium-uspolo-clothes',
     type: 'premium',
-    image: '/assets/images/Slider/SliderUsPolo.png',
+    image: '/assets/images/Slider/sliderUsPolo.png',
     bgAlignment: 'object-center',
     brandBadge: 'US Polo',
     title: 'CLOTHES',
