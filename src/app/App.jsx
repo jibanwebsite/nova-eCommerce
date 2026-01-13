@@ -1,12 +1,12 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home } from '../features/home/Home';
-import { Wishlist } from '../features/wishlist/Wishlist';
-import { Cart } from '../features/cart/Cart';
-import { Login } from '../features/auth/Login';
-import { ProductListing } from '../features/product/ProductListing';
-import { ProductDetail } from '../features/product/ProductDetail';
-import { ShopHome } from '../features/shop/ShopHome';
-import { Contact } from '../features/contact/Contact';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "../features/home/Home";
+import { Wishlist } from "../features/wishlist/wishlist";
+import { Cart } from "../features/cart/Cart";
+import { Login } from "../features/auth/Login";
+import { ProductListing } from "../features/product/ProductListing";
+import { ProductDetail } from "../features/product/ProductDetail";
+import { ShopHome } from "../features/shop/ShopHome";
+import { Contact } from "../features/contact/Contact";
 
 function App() {
   return (
