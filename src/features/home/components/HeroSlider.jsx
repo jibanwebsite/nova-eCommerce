@@ -8,7 +8,7 @@ const slides = [
   {
     id: 'brand-activewear',
     type: 'brand',
-    image: '/src/assets/images/Slider/activewears.jpg',
+    image: '/assets/images/Slider/activewears.jpg',
     bgAlignment: 'object-top',
     brandBadge: 'HRX',
     logos: true,
@@ -19,7 +19,7 @@ const slides = [
   {
     id: 'standard-caprese-handbags',
     type: 'standard',
-    image: '/src/assets/images/Slider/SliderHandbags.jpg',
+    image: '/assets/images/Slider/SliderHandbags.jpg',
     bgAlignment: 'object-center',
     brandBadge: 'Caprese',
     title: 'HANDBAGS',
@@ -29,7 +29,7 @@ const slides = [
   {
     id: 'standard-fossil-watches',
     type: 'standard',
-    image: '/src/assets/images/Slider/Watche.jpg',
+    image: '/assets/images/Slider/Watche.jpg',
     bgAlignment: 'object-center',
     brandBadge: 'Fossil',
     title: 'WATCHES',
@@ -39,7 +39,7 @@ const slides = [
   {
     id: 'premium-uspolo-clothes',
     type: 'premium',
-    image: '/src/assets/images/Slider/SliderUsPolo.png',
+    image: '/assets/images/Slider/SliderUsPolo.png',
     bgAlignment: 'object-center',
     brandBadge: 'US Polo',
     title: 'CLOTHES',

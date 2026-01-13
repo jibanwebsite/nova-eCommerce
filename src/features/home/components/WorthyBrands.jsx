@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 const worthyBrandsData = [
   {
     id: 1,
-    image: "/src/assets/images/slider/modalworthy/cruelty.jpg", // placeholder for Body Shop
+    image: "/assets/images/slider/modalworthy/cruelty.jpg", // placeholder for Body Shop
     brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/The_Body_Shop_logo.svg/1200px-The_Body_Shop_logo.svg.png",
     category: "Cruelty-Free Personal Care",
     offer: "BUY 1, GET 1 FREE",
@@ -13,7 +13,7 @@ const worthyBrandsData = [
   },
   {
     id: 2,
-    image: "/src/assets/images/slider/modalworthy/makeup.jpg", // US Polo Sneakers
+    image: "/assets/images/slider/modalworthy/makeup.jpg", // US Polo Sneakers
     brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/U.S._Polo_Assn._logo.svg/2560px-U.S._Polo_Assn._logo.svg.png",
     category: "Trending Casuals",
     offer: "MIN. 40% OFF", 
@@ -21,7 +21,7 @@ const worthyBrandsData = [
   },
   {
     id: 3,
-    image: "/src/assets/images/slider/modalworthy/shoes.jpeg", // Aldo Shoes
+    image: "/assets/images/slider/modalworthy/shoes.jpeg", // Aldo Shoes
     brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Aldo_Group_logo.svg/2560px-Aldo_Group_logo.svg.png",
     category: "International Picks",
     offer: "MIN. 50% OFF",
@@ -29,7 +29,7 @@ const worthyBrandsData = [
   },
   {
     id: 4,
-    image: "/src/assets/images/slider/modalworthy/manwears.jpg", // Ethnic
+    image: "/assets/images/slider/modalworthy/manwears.jpg", // Ethnic
     brandLogo: "https://w7.pngwing.com/pngs/387/565/png-transparent-melange-clothing-fashion-brand-logos-miscellaneous-text-logo.png", // Melange
     category: "Must-Haves Ethnic Wear",
     offer: "FLAT 65% OFF",
@@ -37,7 +37,7 @@ const worthyBrandsData = [
   },
   {
     id: 5,
-    image: "/src/assets/images/slider/modalworthy/saree.jpg", // Saree
+    image: "/assets/images/slider/modalworthy/saree.jpg", // Saree
     brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Myntra_logo.svg/1200px-Myntra_logo.svg.png", // Placeholder for 'M'
     category: "Stylish Collection Sarees",
     offer: "MIN. 85% OFF",
@@ -45,7 +45,7 @@ const worthyBrandsData = [
   },
   {
     id: 6,
-    image: "/src/assets/images/slider/modalworthy/sareed.jpg", // Saree
+    image: "/assets/images/slider/modalworthy/sareed.jpg", // Saree
     brandLogo: "https://logodix.com/logo/1823903.png", // Sangria
     category: "Designer Sarees",
     offer: "UNDER ₹699",
@@ -54,7 +54,7 @@ const worthyBrandsData = [
   // Duplicates for slider loop
   {
     id: 7,
-    image: "/src/assets/images/slider/modalworthy/watches.jpg",
+    image: "/assets/images/slider/modalworthy/watches.jpg",
     brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/The_Body_Shop_logo.svg/1200px-The_Body_Shop_logo.svg.png",
     category: "Cruelty-Free Personal Care",
     offer: "BUY 1, GET 1 FREE",
@@ -62,7 +62,7 @@ const worthyBrandsData = [
   },
    {
     id: 8,
-    image: "/src/assets/images/slider/modalworthy/sandals.jpg", 
+    image: "/assets/images/slider/modalworthy/sandals.jpg", 
     brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/U.S._Polo_Assn._logo.svg/2560px-U.S._Polo_Assn._logo.svg.png",
     category: "Trending Casuals",
     offer: "MIN. 40% OFF",
