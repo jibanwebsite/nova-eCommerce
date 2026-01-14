@@ -17,12 +17,14 @@ export function ProductListing() {
 
   // Dynamic Page Config
   const isClothing = location.pathname.includes("clothing");
+  const isShopAll = location.pathname === "/shop";
+  
   // If params exist, use them. Else fall back to manual checks or default.
   let pageTitle = "Men T-Shirts";
   let displayGender = "Men";
   let displayCategory = "T-Shirts";
   let products = defaultTshirts;
-  let itemCount = "102456";
+  let itemCount = "102";
 
   if (gender && category) {
     // Format category for display (kurtas-and-kurta-sets -> Kurtas & Kurta Sets)
@@ -39,21 +41,27 @@ export function ProductListing() {
     // Simple mock logic to show "clothing" data for non-tshirt categories just to vary it
     if (!category.includes("t-shirt")) {
       products = defaultClothing;
-      itemCount = "54032"; // Random count for other categories
+      itemCount = "126"; // Random count for other categories
     }
   } else if (isClothing) {
     pageTitle = "Clothing & Apparel";
     products = defaultClothing;
-    itemCount = "3621600";
+    itemCount = "400";
+  } else if (isShopAll) {
+    pageTitle = "All Products";
+    displayGender = "All";
+    displayCategory = "Products";
+    products = defaultClothing;
+    itemCount = "45000+";
   }
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-white">
       <Header />
 
       {/* Breadcrumbs & Title Section - Wrapped in max-width */}
       <div className="max-w-[1600px] mx-auto">
-        <div className="pt-24 px-5 pb-5">
+        <div className="pt-4 px-5 pb-5">
           <div className="text-sm text-gray-900 mb-6">
             <span className="cursor-pointer hover:text-gray-900">Home</span>
             <span className="mx-2 text-gray-400">/</span>

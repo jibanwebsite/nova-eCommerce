@@ -11,7 +11,7 @@ export const defaultTshirts = [
     rating: 4.4,
     ratingCount: '17.7k',
     sizes: 'S, M, L, XL',
-    image: '/assets/images/slider/watche.jpg'
+    image: '/src/assets/images/slider/watche.jpg'
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const defaultTshirts = [
     rating: 4.2,
     ratingCount: '58.4k',
     sizes: 'M',
-    image: '/assets/images/HM-Hero.jpg' 
+    image: '/src/assets/images/HM-Hero.jpg' 
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ export const defaultTshirts = [
     rating: 4.1,
     ratingCount: '137',
     sizes: 'S, M, L, XL, XXL',
-    image: '/assets/images/rigo-tshirt.jpg'
+    image: '/src/assets/images/rigo-tshirt.jpg'
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ export const defaultTshirts = [
     rating: 4.4,
     ratingCount: '17.7k',
     sizes: 'M, L',
-    image: '/assets/images/levis.jpg'
+    image: '/src/assets/images/levis.jpg'
   },
   {
     id: 5,
@@ -59,7 +59,7 @@ export const defaultTshirts = [
     rating: 4.1,
     ratingCount: '1.5k',
     sizes: 'S, M, L, XL',
-    image: '/assets/images/powerlook.jpg'
+    image: '/src/assets/images/powerlook.jpg'
   },
   {
     id: 6,
@@ -71,7 +71,7 @@ export const defaultTshirts = [
     rating: 4.0,
     ratingCount: '102.1k',
     sizes: 'S, M, L',
-    image: '/assets/images/roadster.jpg'
+    image: '/src/assets/images/roadster.jpg'
   },
   {
     id: 7,
@@ -83,7 +83,7 @@ export const defaultTshirts = [
     rating: 4.2,
     ratingCount: '45.1k',
     sizes: 'M, L, XL',
-    image: '/assets/images/hrx.jpg'
+    image: '/src/assets/images/hrx.jpg'
   },
   {
     id: 8,
@@ -95,7 +95,7 @@ export const defaultTshirts = [
     rating: 4.5,
     ratingCount: '2.3k',
     sizes: 'S, M, L, XL',
-    image: '/assets/images/tommy.jpg'
+    image: '/src/assets/images/tommy.jpg'
   },
 ];
 
@@ -109,7 +109,7 @@ export const defaultClothing = [
     discount: '39% OFF',
     rating: 4.4,
     ratingCount: '201',
-    image: '/assets/images/tricycle.jpg'
+    image: '/src/assets/images/tricycle.jpg'
   },
   {
     id: 102,

@@ -76,7 +76,7 @@ export function ShopHome() {
       <Header />
       
       {/* Hero Section */}
-      <div className="pt-24 pb-10 relative">
+      <div className="pt-4 pb-10 relative">
         {/* Sticky Right Tab */}
         <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center cursor-pointer">
            <div className="bg-[#535766] text-white py-4 px-1 writing-vertical-rl text-xs font-bold tracking-wider flex items-center gap-2 uppercase" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>

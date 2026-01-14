@@ -258,129 +258,146 @@ export function Login() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#fceea4] bg-opacity-20 bg-[linear-gradient(to_bottom_right,#fceea4_0%,#fceea4_50%,#fceea4_100%)]">
-      {/* Background color approximation: The screenshot has a very light pink/yellow tint. 
-          Actually standard Myntra login uses a very light pink #fceea4 or similar but looks almost white/pink. 
-          Screenshot looks like a very very light pink. Let's use 'bg-pink-50'. */}
-      <div className="min-h-screen bg-[#fcf5f5]"> 
-        <Header />
-        
-        <div className="flex justify-center items-start pt-12 pb-20 px-4 min-h-[calc(100vh-80px)]">
-          <div className="bg-white w-full max-w-[400px] shadow-sm min-h-[600px]">
-            {/* Banner Image Area */}
-            <div className="h-40 w-full overflow-hidden relative bg-gradient-to-r from-orange-100 to-pink-100">
-               {/* Simulating the banner content if real image not available */}
-               <img 
-                 src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2023/10/26/f96590b2-70fc-4034-8c43-42e77cc856c91698301740925-Flat_300_Off_2.jpg" 
-                 alt="Flat ₹300 OFF" 
-                 className="w-full h-full object-cover"
-                 onError={(e) => {
-                   e.target.style.display = 'none';
-                   e.target.parentNode.classList.add('flex', 'items-center', 'justify-center');
-                   e.target.parentNode.innerHTML = '<div class="text-center"><h3 class="text-2xl font-bold text-primary">FLAT ₹300 OFF</h3><p class="text-xs text-gray-500">On your 1st purchase</p></div>';
-                 }}
-               />
+    <div className="min-h-screen bg-gray-50/50 flex flex-col font-sans">
+      <Header />
+      
+      <div className="flex-1 flex justify-center items-center py-10 px-4 sm:px-6">
+        <div className="bg-white w-full max-w-[900px] shadow-2xl rounded-xl overflow-hidden flex flex-col md:flex-row min-h-[600px] border border-gray-100">
+          
+          {/* Left Side: Visual Hero */}
+          <div className="hidden md:block w-1/2 relative bg-gray-900">
+             <div className="absolute inset-0 bg-black/20 z-10"></div>
+             <img 
+               src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop" 
+               alt="Fashion Editorial" 
+               className="w-full h-full object-cover opacity-90"
+             />
+             <div className="absolute bottom-10 left-10 right-10 z-20 text-white">
+                <h3 className="text-3xl font-bold mb-2 tracking-tight">Welcome to Nova</h3>
+                <p className="text-gray-200 text-sm leading-relaxed opacity-90">
+                  Discover the latest trends in fashion and explore a world of style tailored just for you.
+                </p>
+             </div>
+          </div>
+
+          {/* Right Side: Form Content */}
+          <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+            
+            {/* Header */}
+            <div className="mb-10 text-center md:text-left">
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-2 tracking-tight">
+                Get Started
+              </h2>
+              <p className="text-sm text-gray-500 font-normal">
+                 Please enter your mobile number to continue
+              </p>
             </div>
 
-            <div className="p-8">
-              {/* Header */}
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-800">
-                  Login <span className="text-lg font-normal text-gray-600">or</span> Signup
-                </h2>
-              </div>
-
-              {/* Input */}
-              <div className="mb-6">
-                <div className={`border ${showError ? 'border-red-500' : 'border-gray-300'} flex items-center h-10 px-3 focus-within:${showError ? 'border-red-500' : 'border-black'} transition-colors relative`}>
-                  {/* Visual Display of selected code (Professional Look) */}
-                  <span className="text-gray-800 text-sm font-semibold pointer-events-none z-0">
-                    {selectedCode}
-                  </span>
-                  <span className="text-gray-400 text-[10px] ml-1 font-bold pointer-events-none">▼</span>
-
-                  {/* Invisible Native Select for interaction */}
-                  <div className="absolute inset-0 w-[80px] z-10 opacity-0 cursor-pointer overflow-hidden">
-                    <select 
-                      value={selectedCode}
-                      onChange={(e) => setSelectedCode(e.target.value)}
-                      className="w-full h-full cursor-pointer appearance-none"
-                    >
-                      {countryCodes.map((item) => (
-                        <option key={item.code + item.country} value={item.code}>
-                          {item.country} {item.code} &nbsp;&nbsp;({item.label})
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div className="w-px h-6 bg-gray-300 mx-3"></div>
-                  
-                  <input 
-                    type="tel" 
-                    value={phoneNumber}
-                    onChange={(e) => {
-                      const val = e.target.value.replace(/\D/g, '');
-                      if (val.length <= 10) {
-                          setPhoneNumber(val);
-                          setShowError(false); // Clear error on typing
-                      }
-                    }}
-                    className="flex-1 outline-none text-gray-800 text-sm font-medium placeholder-gray-400 z-20 bg-transparent"
-                    placeholder="Mobile Number*"
-                  />
+            {/* Input */}
+            <div className="mb-8">
+              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Mobile Number</label>
+              <div className={`border ${showError ? 'border-red-500' : 'border-gray-300'} flex items-center h-12 px-4 rounded-lg focus-within:border-black focus-within:ring-1 focus-within:ring-black transition-all relative bg-gray-50/50`}>
+                {/* Country Code (Visual) */}
+                <div className="flex items-center gap-2 cursor-pointer pr-4 border-r border-gray-300 h-full">
+                    <span className="text-gray-900 text-sm font-semibold">
+                        {selectedCode}
+                    </span>
+                    <span className="text-gray-400 text-[10px] transform scale-75">▼</span>
                 </div>
-                {/* Error Message */}
-                {showError && (
-                  <p className="text-[10px] text-red-500 mt-1 text-left">
-                    Please enter a valid mobile number (10 digits)
-                  </p>
-                )}
-              </div>
 
-              {/* Terms */}
-              <div className="mb-6 flex items-start gap-3">
+                {/* Invisible Native Select */}
+                <select 
+                    value={selectedCode}
+                    onChange={(e) => setSelectedCode(e.target.value)}
+                    className="absolute left-0 top-0 w-[90px] h-full opacity-0 cursor-pointer"
+                >
+                    {countryCodes.map((item) => (
+                    <option key={item.code + item.country} value={item.code}>
+                        {item.country} {item.code} ({item.label})
+                    </option>
+                    ))}
+                </select>
+                
                 <input 
-                  type="checkbox"
-                  checked={isChecked}
-                  onChange={(e) => setIsChecked(e.target.checked)}
-                  className="mt-[3px] accent-primary w-3.5 h-3.5 cursor-pointer" 
-                />
-                <div className="flex-1 text-[12px] text-gray-800 leading-relaxed font-semibold">
-                  By continuing, I agree to the <span className="text-primary font-bold cursor-pointer">Terms of Use</span> & <span className="text-primary font-bold cursor-pointer">Privacy Policy</span> and I am above 18 years old.
-                </div>
-              </div>
-
-              {/* Button */}
-              <div className="mb-6">
-                <Button 
-                  disabled={!isChecked}
-                  onClick={() => {
-                    if (phoneNumber.length < 10) {
-                      setShowError(true);
-                    } else {
-                      // Proceed with login logic
-                      console.log("Proceeding with login:", selectedCode, phoneNumber);
+                  type="tel" 
+                  value={phoneNumber}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/\D/g, '');
+                    if (val.length <= 10) {
+                        setPhoneNumber(val);
+                        setShowError(false); 
                     }
                   }}
-                  className={`w-full text-white font-bold text-sm py-3 uppercase tracking-wider transition-colors ${
-                    isChecked 
-                      ? 'bg-red-500 cursor-pointer hover:bg-red-600' 
-                      : 'bg-gray-400 cursor-not-allowed hover:bg-gray-400'
-                  }`}
-                >
-                  Continue
-                </Button>
+                  className="flex-1 outline-none text-gray-900 text-sm font-semibold placeholder-gray-400 pl-4 bg-transparent h-full"
+                  placeholder="Enter 10 digit mobile number"
+                />
               </div>
-
-              {/* Help Link */}
-              <div className="text-left">
-                <p className="text-[12px] text-gray-600">
-                  Have trouble logging in? <span className="text-primary font-bold cursor-pointer">Get help</span>
+              {/* Error Message */}
+              {showError && (
+                <p className="text-[11px] text-red-500 mt-2 font-medium flex items-center gap-1">
+                  <span className="block w-1 h-1 bg-red-500 rounded-full"></span>
+                  Valid 10 digit number required
                 </p>
-              </div>
-
+              )}
             </div>
+
+            {/* Terms */}
+            <div className="mb-8 flex items-start gap-3 group cursor-pointer" onClick={() => setIsChecked(!isChecked)}>
+              <div className={`mt-0.5 w-5 h-5 rounded border flex items-center justify-center transition-colors ${isChecked ? 'bg-black border-black' : 'border-gray-300 bg-white group-hover:border-gray-400'}`}>
+                 {isChecked && <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>}
+              </div>
+              
+              <div className="flex-1 text-[13px] text-gray-600 leading-relaxed select-none">
+                By continuing, I agree to the <span className="text-black font-semibold hover:underline">Terms of Use</span> & <span className="text-black font-semibold hover:underline">Privacy Policy</span>
+              </div>
+            </div>
+
+            {/* Button */}
+            <div className="mb-8">
+              <Button 
+                disabled={!isChecked}
+                onClick={() => {
+                  if (phoneNumber.length < 10) {
+                    setShowError(true);
+                  } else {
+                    console.log("Proceeding with login:", selectedCode, phoneNumber);
+                  }
+                }}
+                className={`w-full text-white font-bold text-[14px] py-4 uppercase tracking-widest rounded-lg transition-all shadow-lg ${
+                  isChecked 
+                    ? 'bg-[#fd2f24] hover:bg-[#d62016] hover:shadow-xl hover:-translate-y-0.5' 
+                    : 'bg-gray-200 cursor-not-allowed text-gray-400 shadow-none'
+                }`}
+              >
+                Continue
+              </Button>
+            </div>
+
+            {/* Social / Divider */}
+            <div className="relative mb-6">
+                <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-gray-200"></div>
+                </div>
+                <div className="relative flex justify-center text-sm">
+                    <span className="px-4 bg-white text-gray-400 text-[11px] uppercase tracking-widest font-semibold">Or login using</span>
+                </div>
+            </div>
+
+            <button className="w-full flex items-center justify-center gap-3 border border-gray-200 bg-white hover:bg-gray-50 hover:border-gray-300 text-gray-700 font-semibold py-3 rounded-lg transition-all duration-200 text-sm mb-6 group shadow-sm hover:shadow">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="w-5 h-5 group-hover:scale-110 transition-transform"/>
+                <span>Continue with Google</span>
+            </button>
+
+            {/* Help Link */}
+            <div className="text-center mt-auto space-y-2">
+              <p className="text-[13px] text-gray-500 font-medium tracking-wide">
+                New to Nova? <Link to="/signup" className="text-[#fd2f24] font-bold cursor-pointer hover:underline uppercase text-[12px]">Create Account</Link>
+              </p>
+              <p className="text-[13px] text-gray-400">
+                Trouble logging in? <span className="text-gray-600 font-bold cursor-pointer hover:underline">Get Help</span>
+              </p>
+            </div>
+
           </div>
         </div>
       </div>

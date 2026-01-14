@@ -1,11 +1,18 @@
 import { Search, User, Heart, ShoppingBag, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import Icon from '@/assets/Nova Apparels FInal Logo/SVG/Gradient Icon.svg';
+import MobileIcon from '@/assets/Nova Apparels FInal Logo/SVG/Secoundry Logo.svg';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname.startsWith(path);
+  };
   const navItems = [
     { 
       label: 'MEN', 
@@ -407,21 +414,16 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
-      <div className="container mx-auto px-0 h-20 flex items-center justify-between relative">
+    <header className="sticky top-0 z-50 bg-white shadow-sm py-0 border-b border-gray-100">
+      <div className="container mx-auto px-2 h-20 flex items-center justify-between relative">
         {/* Logo */}
-        <div className="flex items-center gap-4 md:gap-12">
-          {/* Mobile Menu Button */}
-          <button 
-             className="lg:hidden p-1"
-             onClick={() => setIsMobileMenuOpen(true)}
-          >
-            <Menu className="h-6 w-6 text-gray-700" />
-          </button>
-
+        <div className="flex items-center gap-2 md:gap-12 flex-shrink-0">
           <a href="/" className="flex-shrink-0">
              {/* Nova Apparels Logo */}
-             <img src={Icon} alt="Nova Apparels" className="h-[50px] w-auto" />
+             {/* Mobile Logo shows on screens smaller than lg */}
+             <img src={MobileIcon} alt="Nova Apparels" className="h-[30px] w-auto lg:hidden" />
+             {/* Desktop Logo shows on lg screens and up */}
+             <img src={Icon} alt="Nova Apparels" className="hidden lg:block h-[50px] w-auto" />
           </a>
 
           {/* Nav Links */}
@@ -508,24 +510,34 @@ export function Header() {
           </nav>
         </div>
 
-        {/* Search Bar - Desktop */}
-        <div className="hidden md:flex flex-1 max-w-lg mx-6">
-          <div className="relative w-full bg-gray-50 rounded-md border border-gray-100 focus-within:border-gray-200 focus-within:bg-white transition-colors">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="h-4 w-4 text-gray-400" />
+        {/* Search Bar - Responsive */}
+        <div className="flex flex-1 max-w-lg mx-2 md:mx-6 min-w-0">
+          <div className="relative w-full bg-gray-50 rounded-md border border-gray-100 focus-within:border-gray-200 focus-within:bg-white transition-colors h-[32px] md:h-auto overflow-hidden flex items-center">
+            <div className="absolute inset-y-0 left-0 pl-2 md:pl-3 flex items-center pointer-events-none">
+              <Search className="h-3 w-3 md:h-4 md:w-4 text-gray-400" />
             </div>
             <input
               type="text"
-              className="block w-full pl-10 pr-3 py-2.5 bg-transparent text-sm text-gray-700 placeholder-gray-400 focus:outline-none"
-              placeholder="Search for products, brands and more"
+              className="block w-full pl-8 md:pl-10 pr-2 md:pr-3 py-1.5 md:py-2.5 bg-transparent text-xs md:text-sm text-gray-700 placeholder-gray-400 focus:outline-none"
+              placeholder="Search..."
             />
           </div>
         </div>
 
         {/* Action Icons */}
-        <div className="flex items-center gap-6 h-full">
+        <div className="flex items-center gap-4 h-full md:pr-0">
+           <Link to="/wishlist" className="flex flex-col items-center gap-1 cursor-pointer group h-full justify-center">
+             <Heart className="h-[18px] w-[18px] md:h-5 md:w-5 text-gray-600 group-hover:text-black" strokeWidth={1.5} />
+             <span className="text-[10px] font-bold text-gray-700 group-hover:text-black">Wishlist</span>
+           </Link>
+
+           <Link to="/cart" className="flex flex-col items-center gap-1 cursor-pointer group h-full justify-center">
+             <ShoppingBag className="h-[18px] w-[18px] md:h-5 md:w-5 text-gray-600 group-hover:text-black" strokeWidth={1.5} />
+             <span className="text-[10px] font-bold text-gray-700 group-hover:text-black">Bag</span>
+           </Link>
+
            <div className="flex flex-col items-center gap-1 cursor-pointer group relative h-full justify-center">
-             <User className="h-5 w-5 text-gray-600 group-hover:text-black" strokeWidth={1.5} />
+             <User className="h-[18px] w-[18px] md:h-5 md:w-5 text-gray-600 group-hover:text-black" strokeWidth={1.5} />
              <span className="text-[10px] font-bold text-gray-700 group-hover:text-black">Profile</span>
              <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary hidden group-hover:block"></div>
              
@@ -567,28 +579,38 @@ export function Header() {
                 </ul>
              </div>
            </div>
-           
-           <Link to="/wishlist" className="flex flex-col items-center gap-1 cursor-pointer group h-full justify-center">
-             <Heart className="h-5 w-5 text-gray-600 group-hover:text-black" strokeWidth={1.5} />
-             <span className="text-[10px] font-bold text-gray-700 group-hover:text-black">Wishlist</span>
-           </Link>
-
-           <Link to="/cart" className="flex flex-col items-center gap-1 cursor-pointer group h-full justify-center">
-             <ShoppingBag className="h-5 w-5 text-gray-600 group-hover:text-black" strokeWidth={1.5} />
-             <span className="text-[10px] font-bold text-gray-700 group-hover:text-black">Bag</span>
-           </Link>
         </div>
+      </div>
+      
+      {/* Mobile Category Navigation (Visual) */}
+      <div className="lg:hidden w-full bg-white border-b border-gray-100 pb-2">
+         {/* Top Row: Tabs */}
+         <div className="flex items-center justify-between px-4 h-12">
+            <div className="flex items-center gap-6 overflow-x-auto scrollbar-hide flex-1">
+               <button className={`text-[13px] font-bold ${isActive('/') ? 'text-black border-b-2 border-black' : 'text-gray-500'} pb-1 whitespace-nowrap`}>All</button>
+               {navItems.map((item) => (
+                  <Link 
+                     key={item.label} 
+                     to={item.href}
+                     className={`text-[13px] font-bold ${isActive(item.href) ? 'text-black border-b-2 border-black' : 'text-gray-500 hover:text-black'} whitespace-nowrap pb-1`}
+                  >
+                     {item.label}
+                  </Link>
+               ))}
+            </div>
+         </div>
       </div>
       
       {/* Mobile Menu Drawer */}
       <div className={`fixed inset-0 z-[100] transform transition-transform duration-300 ease-in-out lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        
          {/* Overlay */}
          <div className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}`} onClick={() => setIsMobileMenuOpen(false)}></div>
-         
+
          {/* Drawer Content */}
          <div className="absolute top-0 left-0 w-[80%] max-w-xs h-full bg-white shadow-xl overflow-y-auto">
             <div className="p-4 flex items-center justify-between border-b border-gray-100">
-               <img src={Icon} alt="Nova" className="h-[40px] w-auto" />
+               <img src={MobileIcon} alt="Nova" className="h-[40px] w-auto" />
                <button onClick={() => setIsMobileMenuOpen(false)}>
                  <X className="h-6 w-6 text-gray-500" />
                </button>

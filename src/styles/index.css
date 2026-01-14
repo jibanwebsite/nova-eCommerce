@@ -42,6 +42,20 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Brand Colors */
+  --color-greeny: var(--greeny);
+  --color-navy: var(--navy);
+  --color-purple: var(--purple);
+  --color-pink: var(--pink);
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  
+  /* Brand Gradients - Generates bg-brand-gradient */
+  --background-image-brand-gradient: linear-gradient(90deg, var(--brand-secondary) 0%, var(--brand-primary) 100%);
 }
 
 :root {
@@ -78,10 +92,29 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
+
+
+
+
   /* --- NOVA APPARELS BRANDING --- */
-  
+/* secondary color  */
+  --greeny: #49A249;
+  --navy: #002335;
+  --purple: #3F0686;
+  --pink: #DA1C5C;
+  --black: #000000;
+  --white: #FFFFFF;
+
+  --color-greeny: var(--greeny);
+  --color-navy: var(--navy);
+  --color-purple: var(--purple);
+  --color-pink: var(--pink);
+  --color-black: var(--black);
+  --color-white: var(--white);
+
+
   /* Colors extracted from Nova Apparels SVG: #fd2f24, #ff6f01, #fed800 */
-  --brand-primary: #fd2f24;   /* Red/Orange Primary */
+  --brand-primary: #fd2f24;   /* Red/Orange Primary fd2f24*/
   --brand-secondary: #fed800; /* Yellow Secondary */
   --brand-accent: #ff6f01;    /* Orange Accent */
 
@@ -90,6 +123,18 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: var(--brand-secondary);
   --accent: var(--brand-accent);
+
+  /* Global Brand Gradient */
+  --brand-gradient: linear-gradient(90deg, var(--brand-secondary) 0%, var(--brand-primary) 100%);
+  --gradient: var(--brand-gradient);
+  
+  /* Required for 'bg-brand-gradient' class to work - The prefix MUST be --background-image- */
+  --background-image-brand-gradient: linear-gradient(90deg, var(--brand-secondary) 0%, var(--brand-primary) 100%);
+  --image-brand-gradient: var(--background-image-brand-gradient);
+
+
+
+
 }
 
 .dark {
@@ -176,5 +221,58 @@
     background-image: 
       linear-gradient(to bottom left, transparent 50%, var(--color) 50%), 
       linear-gradient(to top left, transparent 50%, var(--color) 50%);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Gradient Sawtooth Banner for Flat Offer */
+  .flat-offer-banner {
+    --tooth-width: 20px;
+    --tooth-height: 20px;
+    /* Use global brand colors */
+    --color-start: var(--brand-secondary); /* Yellow */
+    --color-end: var(--brand-primary);     /* Red */
+    
+    background: var(--image-brand-gradient);
+    position: relative;
+  }
+  
+  .flat-offer-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--tooth-width) * -1);
+    width: var(--tooth-width);
+    background-repeat: repeat-y;
+    background-size: var(--tooth-width) calc(var(--tooth-height) * 2);
+    /* Left Teeth: Match Start Color */
+    background-image: 
+      linear-gradient(to bottom right, transparent 50%, var(--color-start) 50%), 
+      linear-gradient(to top right, transparent 50%, var(--color-start) 50%);
+  }
+  
+  .flat-offer-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: calc(var(--tooth-width) * -1);
+    width: var(--tooth-width);
+    background-repeat: repeat-y;
+    background-size: var(--tooth-width) calc(var(--tooth-height) * 2);
+    /* Right Teeth: Match End Color */
+    background-image: 
+      linear-gradient(to bottom left, transparent 50%, var(--color-end) 50%), 
+      linear-gradient(to top left, transparent 50%, var(--color-end) 50%);
   }
 }

@@ -6,7 +6,7 @@ export function ProductCard({ product }) {
   if (!product) return null;
 
   return (
-    <Link to={`/product/${product.id}`} className="group flex flex-col cursor-pointer bg-white mb-2 relative w-full overflow-hidden block">
+    <Link to={`/product/${product.id}`} target="_blank" rel="noopener noreferrer" className="group flex flex-col cursor-pointer bg-white mb-2 relative w-full overflow-hidden block">
       {/* Image Container */}
       <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 mb-2">
          <img 

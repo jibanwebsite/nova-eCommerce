@@ -11,6 +11,7 @@ export default defineConfig({
     }
   },
   server: {
+    allowedHosts: ["alias-ages-migration-tissue.trycloudflare.com"],
     port: 4000,
     open: true
   }

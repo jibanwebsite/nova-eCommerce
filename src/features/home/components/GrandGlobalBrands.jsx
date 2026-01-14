@@ -3,68 +3,99 @@ import { useState, useEffect } from 'react';
 const grandGlobalData = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1000&auto=format&fit=crop", // Placeholder
-    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Aldo_Group_logo.svg/2560px-Aldo_Group_logo.svg.png", 
+    image: "/src/assets/images/slider/globalbrands/kurta.jpg", // Placeholder
+    brandLogo: "", 
     brandName: "Dorothy Perkins",
     category: "Hottest Pairs",
     offer: "MIN. 30% OFF",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1000&auto=format&fit=crop", 
-    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/7/75/Mango_logo.svg",
+    image: "/src/assets/images/slider/globalbrands/sndlec.jpg", 
+    brandLogo: "",
     brandName: "Mango",
     category: "Stunning Footwear",
     offer: "UP TO 60% OFF",
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?q=80&w=1000&auto=format&fit=crop", 
-    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Aldo_Group_logo.svg/2560px-Aldo_Group_logo.svg.png", 
+    image: "/src/assets/images/slider/globalbrands/shoes.png", 
+    brandLogo: "",
     brandName: "Aldo",
     category: "Sneakers & More",
     offer: "MIN. 40% OFF",
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1562273138-f46be4ebdf6c?q=80&w=1000&auto=format&fit=crop",
-    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Calvin_klein_logo.svg/2560px-Calvin_klein_logo.svg.png",
+    image: "/src/assets/images/slider/globalbrands/ljckets.jpg",
+    brandLogo: "",
     brandName: "Calvin Klein",
     category: "Must-Have Collection",
     offer: "UP TO 50% OFF",
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1581553690321-e8c7c7247734?q=80&w=1000&auto=format&fit=crop",
-    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gant_logo.svg/2560px-Gant_logo.svg.png",
+    image: "/src/assets/images/slider/globalbrands/camera.jpg",
+    brandLogo: "",
     brandName: "Gant",
     category: "Laid-Back Styles",
     offer: "MIN. 30% OFF",
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1000&auto=format&fit=crop",
-    brandLogo: "https://logo.com/image-cdn/images/kts928pd/production/892bd03212871af9509df658b16c80cda1742457-340x340.png", // Antony Morato placeholder
+    image: "/src/assets/images/slider/globalbrands/baby.jpg",
+    brandLogo: "",
     brandName: "Antony Morato",
     category: "Everyday Wear",
     offer: "UP TO 70% OFF",
   },
-   // Duplicates 
   {
     id: 7,
-    image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1000&auto=format&fit=crop", 
-    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Aldo_Group_logo.svg/2560px-Aldo_Group_logo.svg.png", 
+    image: "/src/assets/images/slider/globalbrands/ladieswatch.jpg", 
+    brandLogo: "", 
     brandName: "Dorothy Perkins",
     category: "Hottest Pairs",
     offer: "MIN. 30% OFF",
   },
   {
     id: 8,
-    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1000&auto=format&fit=crop", 
-    brandLogo: "https://upload.wikimedia.org/wikipedia/commons/7/75/Mango_logo.svg",
+    image: "/src/assets/images/slider/globalbrands/camera.jpg", 
+    brandLogo: "",
     brandName: "Mango",
     category: "Stunning Footwear",
     offer: "UP TO 60% OFF",
+  },
+  {
+    id: 9,
+    image: "/src/assets/images/slider/globalbrands/bag'.jpg", 
+    brandLogo: "",
+    brandName: "Mango",
+    category: "Stunning Footwear",
+    offer: "UP TO 60% OFF",
+  },
+  {
+    id: 10,
+    image: "/src/assets/images/slider/globalbrands/kurta.jpg", 
+    brandLogo: "/src/assets/images/slider/globalbrands/kurta.jpg",
+    brandName: "Kurta",
+    category: "Clothing",
+    offer: "UP TO 60% OFF",
+  },
+  {
+    id: 11,
+    image: "/src/assets/images/slider/globalbrands/lounge1.jpg", 
+    brandLogo: "/src/assets/images/slider/globalbrands/kurta.jpg",
+    brandName: "lounge",
+    category: "Clothing",
+    offer: "UP TO 60% OFF",
+  },
+  {
+    id: 12,
+    image: "/src/assets/images/slider/globalbrands/shoes.jpeg", 
+    brandLogo: "/src/assets/images/slider/globalbrands/kurta.jpg",
+    brandName: "shoes",
+    category: "shoes",
+    offer: "UP TO 20% OFF",
   },
 ];
 
@@ -76,7 +107,7 @@ export function GrandGlobalBrands() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 640) setItemsPerPage(1);
+      if (window.innerWidth < 640) setItemsPerPage(2); // 3 items on mobile
       else if (window.innerWidth < 768) setItemsPerPage(2);
       else if (window.innerWidth < 1024) setItemsPerPage(3);
       else if (window.innerWidth < 1280) setItemsPerPage(4);
@@ -87,6 +118,11 @@ export function GrandGlobalBrands() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Reset active index when page count changes
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [itemsPerPage]);
 
   useEffect(() => {
     if (isPaused) return;
@@ -117,7 +153,7 @@ export function GrandGlobalBrands() {
                 style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
                 {Array.from({ length: totalPages }).map((_, pageIndex) => (
-                    <div key={pageIndex} className="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 bg-white">
+                    <div key={pageIndex} className="w-full flex-shrink-0 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 bg-white gap-2 px-2 md:gap-0 md:px-0">
                         {grandGlobalData.slice(pageIndex * itemsPerPage, (pageIndex + 1) * itemsPerPage).map((item) => (
                             <div key={item.id} className="relative group/card cursor-pointer duration-300 z-0 bg-white pb-3 rounded-sm">
                                 {/* Image Container */}
@@ -127,23 +163,12 @@ export function GrandGlobalBrands() {
                                         alt={item.category} 
                                         className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                                     />
-                                    {/* Overlay Gradient for Logo visibility */}
-                                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
-                                    
-                                    {/* Brand Logo Overlay */}
-                                    <div className="absolute bottom-3 left-3 z-10">
-                                        <img 
-                                            src={item.brandLogo} 
-                                            alt={item.brandName} 
-                                            className="h-6 md:h-8 object-contain brightness-0 invert" 
-                                        />
-                                    </div>
                                 </div>
                                 
                                 {/* Content section Below Image */}
-                                <div className="pt-3 pb-1 px-4 text-center"> 
+                                <div className="pt-3 pb-1 px-1 md:px-4 text-center"> 
                                     {/* Category Text */}
-                                    <div className="text-[15px] md:text-[16px] text-[#282C3F] font-sans font-normal mb-1 leading-snug">
+                                    <div className="text-[11px] md:text-[16px] text-[#282C3F] font-sans font-normal mb-1 leading-snug whitespace-nowrap overflow-hidden text-ellipsis">
                                         {item.category}
                                     </div>
 
