@@ -1,9 +1,20 @@
 import { useState, useEffect } from 'react';
 
+import imgKurta from '@/assets/images/slider/globalbrands/kurta.jpg';
+import imgSndlec from '@/assets/images/slider/globalbrands/sndlec.jpg';
+import imgShoesPng from '@/assets/images/slider/globalbrands/shoes.png';
+import imgJackets from '@/assets/images/slider/globalbrands/ljckets.jpg';
+import imgCamera from '@/assets/images/slider/globalbrands/camera.jpg';
+import imgBaby from '@/assets/images/slider/globalbrands/baby.jpg';
+import imgLadiesWatch from '@/assets/images/slider/globalbrands/ladieswatch.jpg';
+import imgBag from '@/assets/images/slider/globalbrands/bag.jpg';
+import imgLounge from '@/assets/images/slider/globalbrands/lounge1.jpg';
+import imgShoesJpeg from '@/assets/images/slider/globalbrands/shoes.jpeg';
+
 const grandGlobalData = [
   {
     id: 1,
-    image: "/src/assets/images/slider/globalbrands/kurta.jpg", // Placeholder
+    image: imgKurta, // Placeholder
     brandLogo: "", 
     brandName: "Dorothy Perkins",
     category: "Hottest Pairs",
@@ -11,7 +22,7 @@ const grandGlobalData = [
   },
   {
     id: 2,
-    image: "/src/assets/images/slider/globalbrands/sndlec.jpg", 
+    image: imgSndlec, 
     brandLogo: "",
     brandName: "Mango",
     category: "Stunning Footwear",
@@ -19,7 +30,7 @@ const grandGlobalData = [
   },
   {
     id: 3,
-    image: "/src/assets/images/slider/globalbrands/shoes.png", 
+    image: imgShoesPng, 
     brandLogo: "",
     brandName: "Aldo",
     category: "Sneakers & More",
@@ -27,7 +38,7 @@ const grandGlobalData = [
   },
   {
     id: 4,
-    image: "/src/assets/images/slider/globalbrands/ljckets.jpg",
+    image: imgJackets,
     brandLogo: "",
     brandName: "Calvin Klein",
     category: "Must-Have Collection",
@@ -35,7 +46,7 @@ const grandGlobalData = [
   },
   {
     id: 5,
-    image: "/src/assets/images/slider/globalbrands/camera.jpg",
+    image: imgCamera,
     brandLogo: "",
     brandName: "Gant",
     category: "Laid-Back Styles",
@@ -43,7 +54,7 @@ const grandGlobalData = [
   },
   {
     id: 6,
-    image: "/src/assets/images/slider/globalbrands/baby.jpg",
+    image: imgBaby,
     brandLogo: "",
     brandName: "Antony Morato",
     category: "Everyday Wear",
@@ -51,7 +62,7 @@ const grandGlobalData = [
   },
   {
     id: 7,
-    image: "/src/assets/images/slider/globalbrands/ladieswatch.jpg", 
+    image: imgLadiesWatch, 
     brandLogo: "", 
     brandName: "Dorothy Perkins",
     category: "Hottest Pairs",
@@ -59,7 +70,7 @@ const grandGlobalData = [
   },
   {
     id: 8,
-    image: "/src/assets/images/slider/globalbrands/camera.jpg", 
+    image: imgCamera, 
     brandLogo: "",
     brandName: "Mango",
     category: "Stunning Footwear",
@@ -67,7 +78,7 @@ const grandGlobalData = [
   },
   {
     id: 9,
-    image: "/src/assets/images/slider/globalbrands/bag'.jpg", 
+    image: imgBag, 
     brandLogo: "",
     brandName: "Mango",
     category: "Stunning Footwear",
@@ -75,24 +86,24 @@ const grandGlobalData = [
   },
   {
     id: 10,
-    image: "/src/assets/images/slider/globalbrands/kurta.jpg", 
-    brandLogo: "/src/assets/images/slider/globalbrands/kurta.jpg",
+    image: imgKurta, 
+    brandLogo: imgKurta,
     brandName: "Kurta",
     category: "Clothing",
     offer: "UP TO 60% OFF",
   },
   {
     id: 11,
-    image: "/src/assets/images/slider/globalbrands/lounge1.jpg", 
-    brandLogo: "/src/assets/images/slider/globalbrands/kurta.jpg",
+    image: imgLounge, 
+    brandLogo: imgKurta,
     brandName: "lounge",
     category: "Clothing",
     offer: "UP TO 60% OFF",
   },
   {
     id: 12,
-    image: "/src/assets/images/slider/globalbrands/shoes.jpeg", 
-    brandLogo: "/src/assets/images/slider/globalbrands/kurta.jpg",
+    image: imgShoesJpeg, 
+    brandLogo: imgKurta,
     brandName: "shoes",
     category: "shoes",
     offer: "UP TO 20% OFF",

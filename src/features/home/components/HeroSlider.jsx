@@ -3,12 +3,18 @@ import { SideDrawer } from '../../../components/layout/SideDrawer';
 import { Button } from '@/components/ui/Button';
 
 
+import imgActivewear from '@/assets/images/slider/activewears.jpg';
+import imgHandbags from '@/assets/images/slider/SliderHandbags.jpg';
+import imgWatches from '@/assets/images/slider/watche.jpg';
+import imgUsPolo from '@/assets/images/slider/sliderUsPolo.png';
+
+
 // sildes images 
 const slides = [
   {
     id: 'brand-activewear',
     type: 'brand',
-    image: '/src/assets/images/Slider/activewears.jpg',
+    image: imgActivewear,
     bgAlignment: 'object-top',
     brandBadge: 'HRX',
     logos: true,
@@ -19,7 +25,7 @@ const slides = [
   {
     id: 'standard-caprese-handbags',
     type: 'standard',
-    image: '/src/assets/images/Slider/SliderHandbags.jpg',
+    image: imgHandbags,
     bgAlignment: 'object-center',
     brandBadge: 'Caprese',
     title: 'HANDBAGS',
@@ -29,7 +35,7 @@ const slides = [
   {
     id: 'standard-fossil-watches',
     type: 'standard',
-    image: '/src/assets/images/Slider/Watche.jpg',
+    image: imgWatches,
     bgAlignment: 'object-center',
     brandBadge: 'Fossil',
     title: 'WATCHES',
@@ -39,7 +45,7 @@ const slides = [
   {
     id: 'premium-uspolo-clothes',
     type: 'premium',
-    image: '/src/assets/images/Slider/SliderUsPolo.png',
+    image: imgUsPolo,
     bgAlignment: 'object-center',
     brandBadge: 'US Polo',
     title: 'CLOTHES',

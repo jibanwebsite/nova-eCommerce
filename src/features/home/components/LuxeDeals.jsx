@@ -1,60 +1,75 @@
 import { useState, useEffect } from 'react';
 
 
+// Import Images
+import imgMakeup from '@/assets/images/slider/luxedeals/makeup.jpg';
+import imgAyurveda from '@/assets/images/slider/luxedeals/ayurveda.jpg';
+import imgSpectacles from '@/assets/images/slider/luxedeals/spectacles.jpeg';
+import imgChopard from '@/assets/images/slider/luxedeals/chopard.jpeg';
+import imgSwarovski from '@/assets/images/slider/luxedeals/sharovski.jpg';
+import imgKayali from '@/assets/images/slider/luxedeals/kayali.jpg';
+import imgTissot from '@/assets/images/slider/luxedeals/Tissot.jpg';
+import imgJustCavali from '@/assets/images/slider/luxedeals/justcavali.jpg';
+import imgDiesel from '@/assets/images/slider/luxedeals/diesel.jpg';
+import imgBrooks from '@/assets/images/slider/luxedeals/brookab.jpg';
+import imgDaMilano from '@/assets/images/slider/luxedeals/damilano.jpg';
+import imgAldo from '@/assets/images/slider/luxedeals/aldoshoe.jpg';
+
+
 // luxeDealsData 
 const luxeDealsData = [
   {
     id: 'forestessentials',
-    image: "/src/assets/images/slider/luxedeals/makeup.jpg", // Skincare/Forest Essentials
+    image: imgMakeup, // Skincare/Forest Essentials
     brand1: "FOREST ESSENTIALS",
     offer: "FREE GIFT WITH PURCHASE",
     logoStyle: "serif",
   },
   {
     id: 'kamaayurveda',
-    image: "/src/assets/images/slider/luxedeals/ayurveda.jpg", // Ayurveda/Kama
+    image: imgAyurveda, // Ayurveda/Kama
     brand1: "KAMA AYURVEDA",
     offer: "B2G1 + FLAT 15% OFF",
     logoStyle: "serif",
   },
   {
     id: 'philipp plein',
-    image: "/src/assets/images/slider/luxedeals/spectacles.jpeg", // Sunglasses/Philipp Plein
+    image: imgSpectacles, // Sunglasses/Philipp Plein
     brand1: "PHILIPP PLEIN",
     offer: "UP TO 50% OFF",
     logoStyle: "sans",
   },
   {
     id: 'chopard',
-    image: "/src/assets/images/slider/luxedeals/chopard.jpeg", // Sunglasses/Chopard
+    image: imgChopard, // Sunglasses/Chopard
     brand1: "Chopard",
     offer: "UP TO 50% OFF",
     logoStyle: "cursive", // Script style for Chopard
   },
   {
     id: 'swarovski',
-    image: "/src/assets/images/slider/luxedeals/sharovski.jpg", // Jewelry/Swarovski
+    image: imgSwarovski, // Jewelry/Swarovski
     brand1: "SWAROVSKI",
     offer: "UP TO 30% OFF",
     logoStyle: "serif",
   },
   {
     id: 'kayali',
-    image: "/src/assets/images/slider/luxedeals/kayali.jpg", // Perfume/Kay Ali
+    image: imgKayali, // Perfume/Kay Ali
     brand1: "KAY ALI",
     offer: "GIFT ON ALL ORDERS",
     logoStyle: "sans",
   },
   {
     id: 'tissot',
-    image: "/src/assets/images/slider/luxedeals/Tissot.jpg", // Watches
+    image: imgTissot, // Watches
     brand1: "TISSOT",
     offer: "FLAT 10% OFF",
     logoStyle: "sans",
   },
   {
     id: 'coach',
-    image: "/src/assets/images/slider/luxedeals/justcavali.jpg", // Bags/Coach
+    image: imgJustCavali, // Bags/Coach
     brand1: "COACH",
     brand2: "Just Cavalli",
     offer: "UP TO 40% OFF",
@@ -62,28 +77,28 @@ const luxeDealsData = [
   },
   {
     id: 'diesel',
-    image: "/src/assets/images/slider/luxedeals/diesel.jpg", // Fashion
+    image: imgDiesel, // Fashion
     brand1: "DIESEL",
     offer: "FLAT 40% OFF",
     logoStyle: "sans",
   },
   {
     id: 'brooksbrothers',
-    image: "/src/assets/images/slider/luxedeals/brookab.jpg", // Shirts
+    image: imgBrooks, // Shirts
     brand1: "BROOKS BROTHERS",
     offer: "MIN. 50% OFF",
     logoStyle: "serif",
   },
   {
     id: 'damilano',
-    image: "/src/assets/images/slider/luxedeals/damilano.jpg", // Handbags
+    image: imgDaMilano, // Handbags
     brand1: "DA MILANO",
     offer: "FLAT 40% OFF",
     logoStyle: "serif",
   },
   {
     id: 'aldo',
-    image: "/src/assets/images/slider/luxedeals/aldoshoe.jpg", // Shoes
+    image: imgAldo, // Shoes
     brand1: "ALDO",
     offer: "MIN. 40% OFF",
     logoStyle: "sans",
